@@ -31,7 +31,7 @@ def save_model_background(model_persistence: ModelPersistence, model_trainer: Mo
 @router.post("/upload_csv")
 async def upload_csv(target_class: str, excluded_col: str, file: UploadFile = File(...)):
     hash = random.getrandbits(128)
-    print(hash,file.filename, target_class, excluded_col)
+
     file_path = f'/{FILE_PATH}/{hash}_csv.csv'
     with open(file_path, "wb") as f:
         f.write(await file.read())
@@ -41,7 +41,6 @@ async def upload_csv(target_class: str, excluded_col: str, file: UploadFile = Fi
 
 @router.get("/get_datatypes/")
 async def get_data_types(hash: str):
-    print(hash, data_processor_map)
     data_processor = data_processor_map[hash]
     num_cols, cat_cols = data_processor.get_datatypes()
     return {'numerical_columns': num_cols, 'categorical_columns': cat_cols}

@@ -46,7 +46,6 @@ class BaseDataProcessor:
         self. categorical_columns = self.df.select_dtypes(include=['object']).columns
         num_list = self.numerical_columns.tolist()
         cat_list = self.categorical_columns.tolist()
-        print(num_list, cat_list)
         if self.target_class in num_list:
             num_list.remove(self.target_class)
         if self.target_class in cat_list:
@@ -151,8 +150,6 @@ class ModelTrainer:
 
     def model_prediction(self):
         self.predictions = self.model.predict(self.X_test)
-        print(set(self.y_test))
-        print(set(self.predictions))
 
         return self.evaluate_model()
 
