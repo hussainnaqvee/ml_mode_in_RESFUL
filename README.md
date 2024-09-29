@@ -17,6 +17,11 @@ Go to the project directory
 cd {project_dir}
 ```
 
+Setting virtual env(venv) by following the mentioned link
+```bash
+https://fastapi.tiangolo.com/virtual-environments/
+```
+
 Install dependencies
 
 ```bash
