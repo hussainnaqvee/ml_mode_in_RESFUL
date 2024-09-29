@@ -174,11 +174,3 @@ class ModelPersistence:
         file_name = f"{self.model_name}.joblib"
         output_path = FILE_PATH
         dump(model, f"{output_path}/{file_name}")
-
-    def load_model(self, model_name: str):
-        # Load the model from a pickle file
-        pass
-
-    def save_training_details(self, model_name: str, metrics: dict):
-        # Save model training details into the database (SQLAlchemy or Redis)
-        pass
