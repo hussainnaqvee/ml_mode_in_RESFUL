@@ -31,7 +31,7 @@ pip install -r requirements.txt
 Start the script
 
 ```bash
-uvicorn server:app --reload
+uvicorn main:app --reload
 ```
 
 ### Endpoints
